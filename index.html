@@ -146,10 +146,41 @@
                 color: var(--color-f);
                 background: var(--color-z);
             }
+
+            button {
+                position: relative;
+                overflow: hidden;
+            }
+
+            button::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 10%, transparent 10.01%);
+                background-repeat: no-repeat;
+                background-position: 50%;
+                transform: scale(10);
+                opacity: 0;
+                transition:
+                    transform 0.5s,
+                    opacity 1s;
+            }
+
+            button:active::after {
+                transform: scale(0);
+                opacity: 1;
+                transition: 0s;
+            }
+
             ::placeholder {
                 color: var(--color-f);
                 opacity: 0.5;
             }
+
             .duoicon {
                 transform: scale(1.3);
                 color: var(--color-y);
@@ -163,7 +194,7 @@
                 <img src="https://image.pollinations.ai/prompt/monochrome%20light%20blue?model=flux&width=1000&height=1000&nologo=true&seed=3074" alt="imagem de um gato fofo" />
             </galery>
             <settings>
-                <textarea id="prompt" placeholder="type your prompt">cute cat</textarea>
+                <textarea id="prompt" placeholder="type your prompt">cute cat, monochrome light blue</textarea>
                 <input id="width" placeholder="width" />
                 <input id="height" placeholder="height" />
                 <select id="model">
@@ -182,13 +213,24 @@
         <script src="index.js"></script>
         <script>
             function gerate() {
-                galery = document.getElementById("galery");
-                prompt = document.getElementById("prompt");
-                width = document.getElementById("width");
-                height = document.getElementById("height");
-                model = document.getElementById("model");
-                galery.innerHTML += `\n<img src="https://image.pollinations.ai/prompt/${prompt.value}?model=${model.value}&width=${width.value || 1000}&height=${height.value}&nologo=true&seed=${Math.floor(Math.random() * 10**8)}" alt="${prompt.value}" />`
+                let galery = document.getElementById("galery");
+                let prompt = document.getElementById("prompt");
+                let width = document.getElementById("width");
+                let height = document.getElementById("height");
+                let model = document.getElementById("model");
+                galery.innerHTML += `\n<img src="https://image.pollinations.ai/prompt/${encodeURI(prompt.value)}?model=${model.value}&width=${width.value || 1000}&height=${height.value || 1000}&nologo=true&seed=${Math.floor(Math.random() * 10 ** 8)}" alt="${prompt.value}" />`;
+                console.log(galery.innerHTML);
             }
+
+            fetch("https://image.pollinations.ai/models")
+                .then(response => response.json())
+                .then(data => {
+                    let models = document.getElementById("model");
+                    models.innerHTML = "";
+                    data.forEach(model => {
+                        models.innerHTML += `<option value="${model}">${model}</option>`;
+                    });
+                });
 
             window.addEventListener("resize", () => {
                 document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
