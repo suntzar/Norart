@@ -1,263 +1,274 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>My Website</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    <style>
-      @import url(https://db.onlinewebfonts.com/c/2adbeea25e4c3a9e9ba6031bbfb45343?family=Linotte-SemiBold);
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>My Website</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+        <style>
+            @import url(https://db.onlinewebfonts.com/c/2adbeea25e4c3a9e9ba6031bbfb45343?family=Linotte-SemiBold);
 
-      /* Definição de cores */
-      :root {
-        --color-f: #c1ccd5; /*cor da fonte*/
-        --color-p: #b0d8ff; /*cor principal*/
-        --color-s: #90b8eb; /*cor secundaria*/
-        --color-z: #484c56; /*cor do fundo*/
-        --color-y: #565c68; /*cor da UI*/
-        --nord0: #2e3440; /* Polar Night */
-        --nord1: #3b4252;
-        --nord2: #434c5e;
-        --nord3: #4c566a;
-        --nord4: #d8dee9; /* Snow Storm */
-        --nord5: #e5e9f0;
-        --nord6: #eceff4;
-        --nord7: #8fbcbb; /* Frost */
-        --nord8: #88c0d0;
-        --nord9: #81a1c1;
-        --nord10: #5e81ac;
-        --nord11: #bf616a; /* Aurora */
-        --nord12: #d08770;
-        --nord13: #ebcb8b;
-        --nord14: #a3be8c;
-        --nord15: #b48ead;
-      }
+            /* Definição de cores */
+            :root {
+                --color-f: #c1ccd5; /*cor da fonte*/
+                --color-p: #b0d8ff; /*cor principal*/
+                --color-s: #90b8eb; /*cor secundaria*/
+                --color-z: #484c56; /*cor do fundo*/
+                --color-y: #565c68; /*cor da UI*/
+                --nord0: #2e3440; /* Polar Night */
+                --nord1: #3b4252;
+                --nord2: #434c5e;
+                --nord3: #4c566a;
+                --nord4: #d8dee9; /* Snow Storm */
+                --nord5: #e5e9f0;
+                --nord6: #eceff4;
+                --nord7: #8fbcbb; /* Frost */
+                --nord8: #88c0d0;
+                --nord9: #81a1c1;
+                --nord10: #5e81ac;
+                --nord11: #bf616a; /* Aurora */
+                --nord12: #d08770;
+                --nord13: #ebcb8b;
+                --nord14: #a3be8c;
+                --nord15: #b48ead;
+            }
 
-      /* Reset e estilos gerais */
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        transition: 0.3s ease-out;
-        outline: none;
-        -ms-overflow-style: none; /* IE e Edge */
-        scrollbar-width: none; /* Firefox */
-      }
+            /* Reset e estilos gerais */
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                transition: 0.3s ease-out;
+                outline: none;
+                transition: 1s;
+                -ms-overflow-style: none; /* IE e Edge */
+                scrollbar-width: none; /* Firefox */
+            }
 
-      *:not(.katex-display *, .hljs) {
-        font-family: "Linotte-SemiBold";
-      }
+            *:not(.katex-display *, .hljs) {
+                font-family: "Linotte-SemiBold";
+            }
 
-      *::-webkit-scrollbar {
-        display: none;
-      }
+            *::-webkit-scrollbar {
+                display: none;
+            }
 
-      ::selection {
-        background-color: var(--color-z);
-        color: var(--color-s);
-      }
+            ::selection {
+                background-color: var(--color-z);
+                color: var(--color-s);
+            }
 
-      /* Estilos do corpo */
-      body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        height: calc(var(--vh, 1vh) * 100);
-        background-color: var(--color-y);
-        color: var(--color-f);
-        overflow: hidden;
-      }
+            /* Estilos do corpo */
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+                height: calc(var(--vh, 1vh) * 100);
+                background-color: var(--color-y);
+                color: var(--color-f);
+                overflow: hidden;
+            }
 
-      body > h1 {
-        position: absolute;
-        top: 1.5rem;
-      }
+            body > h1 {
+                position: absolute;
+                top: 1.5rem;
+            }
 
-      main {
-        margin-top: 2rem;
-        position: absolute;
-        width: calc(100% - 4rem);
-        height: calc(100% - 8rem);
-        background-color: var(--color-z);
-        border-radius: 2rem;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-      }
+            main {
+                margin-top: 2rem;
+                position: absolute;
+                width: calc(100% - 4rem);
+                height: calc(100% - 8rem);
+                background-color: var(--color-z);
+                border-radius: 2rem;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+            }
 
-      galery {
-        overflow: scroll;
-        height: calc(100% - 15rem);
-        border-radius: 1.5rem;
-        margin-bottom: 1rem;
-        /*background-color: var(--nord11);*/
-      }
+.gallery {
+    overflow: scroll;
+    height: calc(100% - 15rem);
+    border-radius: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
-      settings {
-        width: 100%;
-        overflow: hidden;
-        padding: 1rem;
-        border-radius: 1.5rem;
-        background-color: var(--color-y);
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
-        align-content: stretch;
-      }
+.img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-start;
+    width: 100%;
+    border-radius: 1.5rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background: var(--color-y);
+    flex: 1 0 auto; /* <-- Nova regra para ajustar a altura */
+}
 
-      img {
-        width: 100%;
-        border-radius: 1.5rem;
-        margin-bottom: 1rem;
-      }
 
-      textarea {
-        resize: none;
-        width: 100%;
-        height: 7rem;
-        font-size: 1.2rem;
-        color: var(--color-f);
-        padding: 0.5rem;
-        background: transparent;
-        border-radius: 0.5rem;
-        border: 0.2rem solid var(--color-z);
-      }
+            settings {
+                width: 100%;
+                overflow: hidden;
+                padding: 1rem;
+                border-radius: 1.5rem;
+                background-color: var(--color-y);
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-between;
+            }
 
-      button,
-      input,
-      select {
-        margin-top: 1rem;
-        width: 22%;
-        height: 4rem;
-        background: var(--color-p);
-        outline: none;
-        border: none;
-        border-radius: 0.5rem;
-        padding: 1rem;
-      }
+            .imgsrc {
+                width: 100%;
+                opacity: 1;
+                z-index: 1;
+            }
 
-      input,
-      select {
-        color: var(--color-f);
-        background: var(--color-z);
-      }
 
-      button {
-        position: relative;
-        overflow: hidden;
-      }
 
-      button::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.6) 10%,
-          transparent 10.01%
-        );
-        background-repeat: no-repeat;
-        background-position: 50%;
-        transform: scale(10);
-        opacity: 0;
-        transition: transform 0.5s, opacity 1s;
-      }
+            textarea {
+                resize: none;
+                width: 100%;
+                height: 7rem;
+                font-size: 1.2rem;
+                color: var(--color-f);
+                padding: 0.5rem;
+                background: transparent;
+                border-radius: 0.5rem;
+                border: 0.2rem solid var(--color-z);
+            }
 
-      button:active::after {
-        transform: scale(0);
-        opacity: 1;
-        transition: 0s;
-      }
+            button,
+            input,
+            select {
+                margin-top: 1rem;
+                width: 22%;
+                height: 4rem;
+                background: var(--color-p);
+                outline: none;
+                border: none;
+                border-radius: 0.5rem;
+                padding: 1rem;
+            }
 
-      ::placeholder {
-        color: var(--color-f);
-        opacity: 0.5;
-      }
+            input,
+            select {
+                color: var(--color-f);
+                background: var(--color-z);
+            }
 
-      .duoicon {
-        transform: scale(1.3);
-        color: var(--color-y);
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Nor<span style="color: var(--color-p)">art</span></h1>
-    <main>
-      <galery id="galery">
-        <img
-          src="https://image.pollinations.ai/prompt/monochrome%20light%20blue?model=flux&width=1000&height=1000&nologo=true&seed=3074"
-          alt="imagem de um gato fofo"
-        />
-      </galery>
-      <settings>
-        <textarea id="prompt" placeholder="type your prompt">
-cute cat, monochrome light blue</textarea
-        >
-        <input id="width" placeholder="width" />
-        <input id="height" placeholder="height" />
-        <select id="model">
-          <option value="flux">flux</option>
-          <option value="turbo">turbo</option>
-          <option value="flux-3d">flux-3d</option>
-          <option value="flux-anime">flux-anime</option>
-        </select>
-        <button onclick="gerate()">
-          <i data-duoicon="brush" class="duoicon"></i>
-        </button>
-      </settings>
-    </main>
-    <script src="https://unpkg.com/duo-icons@latest"></script>
-    <script>
-      duoIcons.createIcons();
-    </script>
-    <script src="index.js"></script>
-    <script>
-      function gerate() {
-        let galery = document.getElementById("galery");
-        let prompt = document.getElementById("prompt");
-        let width = document.getElementById("width");
-        let height = document.getElementById("height");
-        let model = document.getElementById("model");
-        galery.innerHTML =
-          `\n<img src="https://image.pollinations.ai/prompt/${encodeURI(
-            prompt.value
-          )}?model=${model.value}&width=${width.value || 1000}&height=${
-            height.value || 1000
-          }&nologo=true&seed=${Math.floor(Math.random() * 10 ** 8)}" alt="${
-            prompt.value
-          }" />` + galery.innerHTML;
-        console.log(galery.innerHTML);
-      }
+            button {
+                position: relative;
+                overflow: hidden;
+            }
 
-      fetch("https://image.pollinations.ai/models")
-        .then((response) => response.json())
-        .then((data) => {
-          let models = document.getElementById("model");
-          models.innerHTML = "";
-          data.forEach((model) => {
-            models.innerHTML += `<option value="${model}">${model}</option>`;
-          });
-        });
+            button::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 10%, transparent 10.01%);
+                background-repeat: no-repeat;
+                background-position: 50%;
+                transform: scale(10);
+                opacity: 0;
+                transition:
+                    transform 0.5s,
+                    opacity 1s;
+            }
 
-      window.addEventListener("resize", () => {
-        document.documentElement.style.setProperty(
-          "--vh",
-          `${window.innerHeight * 0.01}px`
-        );
-      });
-      document.documentElement.style.setProperty(
-        "--vh",
-        `${window.innerHeight * 0.01}px`
-      );
-    </script>
-  </body>
+            button:active::after {
+                transform: scale(0);
+                opacity: 1;
+                transition: 0s;
+            }
+
+            ::placeholder {
+                color: var(--color-f);
+                opacity: 0.5;
+            }
+
+            .duoicon {
+                transform: scale(1.3);
+                color: var(--color-y);
+            }
+            @media (orientation: landscape) {
+                .img {
+                    width: 48%;
+                }
+            }
+
+            @media (orientation: portrait) {
+                .img {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Nor<span style="color: var(--color-p)">art</span></h1>
+        <main>
+            <galery id="galery">
+                <div class="img">
+                    <img class="imgsrc" src="https://image.pollinations.ai/prompt/monochrome%20light%20blue?model=flux&width=1000&height=1000&nologo=true&seed=3074" alt="imagem de um gato fofo" />
+                </div>
+            </galery>
+            <settings>
+                <textarea id="prompt" placeholder="type your prompt">Create a cute cat, monochrome light blue</textarea>
+                <input id="width" placeholder="width" />
+                <input id="height" placeholder="height" />
+                <select id="model">
+                    <option value="flux">flux</option>
+                    <option value="turbo">turbo</option>
+                    <option value="flux-3d">flux-3d</option>
+                    <option value="flux-anime">flux-anime</option>
+                </select>
+                <button onclick="gerate()"><i data-duoicon="brush" class="duoicon"></i></button>
+            </settings>
+        </main>
+        <script src="https://unpkg.com/duo-icons@latest"></script>
+        <script>
+            duoIcons.createIcons();
+        </script>
+        <script src="index.js"></script>
+        <script>
+            function gerate() {
+                let galery = document.getElementById("galery");
+                let prompt = document.getElementById("prompt");
+                let width = document.getElementById("width");
+                let height = document.getElementById("height");
+                let model = document.getElementById("model");
+                let link = `https://image.pollinations.ai/prompt/${encodeURI(prompt.value)}?model=${model.value}&width=${width.value || 1000}&height=${height.value || 1000}&nologo=true&enhance=false&seed=${Math.floor(Math.random() * 10 ** 8)}`;
+                galery.innerHTML = `\n\n<div class="img"><img class="imgsrc" src="${link}" alt="${prompt.value}" onclick="navigator.clipboard.writeText('${link}'); alert('the image link was copied: \\n\\n${link}');" /></div>` + galery.innerHTML;
+            }
+
+            fetch("https://image.pollinations.ai/models")
+                .then(response => response.json())
+                .then(data => {
+                    let models = document.getElementById("model");
+                    models.innerHTML = "";
+                    data.forEach(model => {
+                        models.innerHTML += `<option value="${model}">${model}</option>`;
+                    });
+                });
+
+            window.addEventListener("resize", () => {
+                document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
+            });
+            document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
+        </script>
+    </body>
 </html>
