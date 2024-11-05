@@ -16,6 +16,7 @@ Norart é uma aplicação web que utiliza modelos de aprendizado de máquina par
 
 ## Exemplo de Imagem Gerada:
 ![cute cat, monochrome light blue](https://image.pollinations.ai/prompt/cute%20cat%2C%20monochrome%20light%20blue?model=turbo&amp;width=1000&amp;height=1000&amp;nologo=true&amp;seed=13789431)
+> Cute cat, monochrome light blue
 
 ### Considerações:
  * **Qualidade das Imagens:** A qualidade das imagens geradas depende da complexidade do prompt, do modelo escolhido e dos recursos computacionais disponíveis.
