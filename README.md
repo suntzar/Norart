@@ -10,12 +10,12 @@ Norart é uma aplicação web que utiliza modelos de aprendizado de máquina par
  * **Interface Intuitiva:** Possui uma interface simples e fácil de usar, ideal para usuários com diferentes níveis de experiência.
 
 ## Tecnologias Utilizadas:
- * Biblioteca de IA: (Pollinations Ai)[https://pollinations.ai/]
+ * Biblioteca de IA: [Pollinations Ai](https://pollinations.ai/)
  * API de Imagens: Flux Ai.
-Acesse o Norart: (Github Pages Norart)[https://suntzar.github.io/Norart/]
+Acesse o Norart: [Github Pages Norart](https://suntzar.github.io/Norart/)
 
 ## Exemplo de Imagem Gerada:
-!(cute cat, monochrome light blue)[https://image.pollinations.ai/prompt/cute%20cat%2C%20monochrome%20light%20blue?model=turbo&amp;width=1000&amp;height=1000&amp;nologo=true&amp;seed=13789431]
+![cute cat, monochrome light blue](https://image.pollinations.ai/prompt/cute%20cat%2C%20monochrome%20light%20blue?model=turbo&amp;width=1000&amp;height=1000&amp;nologo=true&amp;seed=13789431)
 Considerações:
  * Qualidade das Imagens: A qualidade das imagens geradas depende da complexidade do prompt, do modelo escolhido e dos recursos computacionais disponíveis.
  * Tempo de Processamento: A geração de imagens pode levar alguns segundos ou minutos, dependendo da complexidade da imagem e do modelo utilizado.
